@@ -6,6 +6,12 @@ scrape_configs:
     static_configs:
       - targets: ['localhost:9090']
 
+  - job_name: 'railway_cost_exporter'
+    scrape_interval: 1m
+    static_configs:
+      - targets:
+          - 'prom-client:8080'
+
   # - job_name: 'example_api'
   #   scheme: http
   #   static_configs:
