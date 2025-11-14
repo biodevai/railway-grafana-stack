@@ -2,8 +2,8 @@ ARG VERSION=v3.2.1
 
 FROM prom/prometheus:${VERSION}
 
-# Copy the prom.yml configuration file to the container
-COPY prom.yml /etc/prometheus/prometheus.yml
+# Copy the prometheus.yml configuration file to the container
+COPY prometheus.yml /etc/prometheus/prometheus.yml
 
 # Command to run Prometheus
 CMD ["--config.file=/etc/prometheus/prometheus.yml", "--storage.tsdb.path=/prometheus"]
