@@ -1,13 +1,15 @@
 global:
   scrape_interval: 15s # Default scrape interval
-
+  scrape_timeout: 5s
+  evaluation_interval: 15s
+  
 scrape_configs:
   - job_name: 'prometheus'
     static_configs:
       - targets: ['localhost:9090']
 
-  - job_name: 'railway_cost_exporter'
-    scrape_interval: 1m
+  - job_name: 'n8n-local'
+    metrics_path: /metrics
     static_configs:
       - targets:
-          - 'railway-cost-exporter:8080'
+          - 'n8n.railway.internal:5678'
