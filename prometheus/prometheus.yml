@@ -12,4 +12,4 @@ scrape_configs:
     metrics_path: /metrics
     static_configs:
       - targets:
-          - 'primary-production:5678'
+          - 'primary-production-b2e2d:5678'
